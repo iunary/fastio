@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: qawba/fastio
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   tag: latest
 
 imagePullSecrets: []
@@ -11,7 +11,7 @@ fullnameOverride: ""
 
 serviceAccount:
   # Specifies whether a service account should be created
-  create: true
+  create: false
   # Automatically mount a ServiceAccount's API credentials?
   automount: true
   # Annotations to add to the service account
@@ -61,10 +61,10 @@ resources:
   # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
   limits:
     cpu: 100m
-    memory: 128Mi
+    memory: 1000Mi
   requests:
     cpu: 100m
-    memory: 128Mi
+    memory: 500Mi
 
 autoscaling:
   enabled: false
